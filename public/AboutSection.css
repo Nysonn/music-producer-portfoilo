@@ -1,0 +1,39 @@
+/* AboutSection.css */
+
+.about-section {
+    min-height: 100vh;
+    background-color: #0d1117; /* Deep slate from theme */
+    color: #c9d1d9; /* Soft white */
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #58a6ff; /* Bright blue from theme */
+  }
+  
+  .about-text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    color: #8b949e; /* Muted silver from theme */
+  }
+  
+  .about-image-container {
+    margin-top: 2rem;
+  }
+  
+  .about-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease;
+  }
+  
+  .about-image:hover {
+    transform: scale(1.05);
+  }
+  

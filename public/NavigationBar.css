@@ -1,0 +1,128 @@
+/* NavigationBar.css */
+
+.navigation-bar {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color var(--transition-duration);
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-decoration: none;
+  letter-spacing: 0.05rem;
+  transition: color var(--transition-duration), transform var(--transition-duration);
+}
+
+.logo:hover {
+  color: var(--hover-color);
+  transform: scale(1.1);
+}
+
+/* Navigation Links */
+.navigation-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color var(--transition-duration), transform var(--transition-duration);
+}
+
+.nav-link:hover {
+  color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: background-color var(--transition-duration);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navigation-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    padding: 1.5rem;
+    transform: translateX(100%);
+    transition: transform var(--transition-duration), opacity var(--transition-duration);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+  }
+
+  .navigation-links.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Active States */
+.nav-link.active {
+  border-bottom: 2px solid var(--hover-color);
+}
+
+/* Transition Effects */
+.navigation-bar:hover {
+  background-color: rgba(13, 17, 23, 0.95);
+}
+
+.line:hover {
+  background-color: var(--hover-color);
+}
