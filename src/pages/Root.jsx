@@ -1,17 +1,17 @@
 import { Outlet } from 'react-router-dom';
-
 import NavigationBar from '../components/NavigationBar';
+import SocialMedia from '../components/SocialMedia'; // Import SocialMedia component
 
 function RootLayout() {
-  // const navigation = useNavigation();
-
   return (
     <>
-      <NavigationBar  />
+      <NavigationBar />
       <main>
-        {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
+        {/* Render the main page content */}
         <Outlet />
       </main>
+      {/* Add the SocialMedia component */}
+      <SocialMedia />
     </>
   );
 }
