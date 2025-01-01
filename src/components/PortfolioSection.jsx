@@ -1,4 +1,4 @@
-import '../../public/PortfoiloSection.css';
+import '../../public/PortfolioSection.css';
 
 export default function PortfolioSection() {
   return (

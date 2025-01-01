@@ -1,7 +1,7 @@
-import PortfoiloSection from "../components/PortfoiloSection";
+import PortfolioSection from "../components/PortfolioSection"
 
 export default function Portfolio() {
     return (
-        <PortfoiloSection />
+        <PortfolioSection />
     )
 }

@@ -2,59 +2,77 @@
 
 .services-section {
     min-height: 100vh;
-    background-color: #0d1117; /* Deep slate */
-    color: #c9d1d9; /* Soft white */
-    padding: 2rem;
+    background: var(--gradient-primary);
+    color: var(--text-color);
+    padding: 6rem 2rem;
     text-align: center;
   }
   
   .services-title {
-    font-size: 2.5rem;
+    font-family: var(--font-family);
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-    color: #58a6ff; /* Bright blue */
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
   }
   
   .services-list {
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
   
   .services-item {
-    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(110, 68, 255, 0.1);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+  }
+  
+  .services-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-strong);
   }
   
   .services-item-title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #58a6ff; /* Bright blue */
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
   }
   
   .services-item-description {
-    font-size: 1rem;
-    color: #8b949e; /* Muted silver */
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
   }
   
   .services-button {
     display: inline-block;
-    margin-top: 2rem;
-    padding: 0.75rem 1.5rem;
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
     border: none;
-    border-radius: 8px;
-    background-color: #58a6ff; /* Bright blue */
-    color: #0d1117; /* Deep slate */
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 50px;
+    background: var(--gradient-accent);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.2s ease;
+    transition: var(--transition-smooth);
     text-decoration: none;
+    box-shadow: var(--shadow-soft);
   }
   
   .services-button:hover {
-    background-color: #1f6feb; /* Vibrant blue hover */
     transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
   }
   

@@ -2,38 +2,65 @@
 
 .about-section {
     min-height: 100vh;
-    background-color: #0d1117; /* Deep slate from theme */
-    color: #c9d1d9; /* Soft white */
-    padding: 2rem;
+    background: var(--gradient-primary);
+    color: var(--text-color);
+    padding: 6rem 2rem;
     text-align: center;
   }
   
   .about-title {
-    font-size: 2.5rem;
+    font-family: var(--font-family);
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
-    color: #58a6ff; /* Bright blue from theme */
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
   }
   
   .about-text {
-    font-size: 1.125rem;
-    line-height: 1.75;
-    margin-bottom: 2rem;
-    color: #8b949e; /* Muted silver from theme */
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin: 0 auto 3rem;
+    color: var(--text-muted);
+    max-width: 800px;
   }
   
   .about-image-container {
-    margin-top: 2rem;
+    margin: 3rem auto;
+    max-width: 800px;
+    position: relative;
   }
   
   .about-image {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(110, 68, 255, 0.1);
   }
   
   .about-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--secondary-color);
+  }
+  
+  /* Add a subtle gradient overlay on hover */
+  .about-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    border-radius: 20px;
+    pointer-events: none;
+  }
+  
+  .about-image-container:hover::after {
+    opacity: 0.1;
   }
   

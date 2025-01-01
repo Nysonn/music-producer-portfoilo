@@ -1,62 +1,78 @@
 /* General Hero Section */
 .hero-section {
-  padding: 2rem 1.5rem;
-  background: linear-gradient(to bottom, #1b1b1b, #121212);
-  color: var(--text-color);
-  text-align: center;
+  min-height: 100vh;
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem;
 }
 
 /* Hero Header */
 .hero-header {
-  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
-  font-size: 3rem;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
+  font-family: var(--font-family);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent-color);
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
 }
 
 .hero-button {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--secondary-color);
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--gradient-accent);
   color: var(--text-color);
-  border-radius: 5px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-button:hover {
-  background-color: var(--hover-color);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
 }
 
 /* Sample Packs Section */
 .sample-packs {
+  margin-top: 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 6rem auto 0;
 }
 
 .sample-card {
-  background: #212121;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(110, 68, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .sample-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px);
+  border-color: var(--secondary-color);
+  box-shadow: 0 5px 20px rgba(110, 68, 255, 0.2);
 }
 
 .sample-image {

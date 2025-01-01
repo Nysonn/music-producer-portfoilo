@@ -1,12 +1,16 @@
 /* Root Styles */
 :root {
-  --primary-color: #0d1117; /* Deep slate */
-  --secondary-color: #58a6ff; /* Bright blue */
-  --accent-color: #8b949e; /* Muted silver */
-  --text-color: #c9d1d9; /* Soft white */
-  --hover-color: #1f6feb; /* Vibrant blue hover */
+  --primary-color: #0f0f1a;    /* Deep navy-black */
+  --secondary-color: #6e44ff;  /* Rich purple */
+  --accent-color: #b4b4cc;    /* Soft silver */
+  --text-color: #ffffff;      /* Pure white */
+  --text-muted: #9090a6;     /* Muted silver */
+  --gradient-primary: linear-gradient(135deg, #0f0f1a 0%, #1a1a2f 100%);
+  --gradient-accent: linear-gradient(135deg, #6e44ff 0%, #9d7fff 100%);
   --font-family: 'Roboto', sans-serif;
-  --transition-duration: 0.4s;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-soft: 0 4px 20px rgba(110, 68, 255, 0.1);
+  --shadow-strong: 0 10px 30px rgba(110, 68, 255, 0.2);
 }
 
 /* General Styles */
@@ -15,4 +19,6 @@ body {
   padding: 0;
   height: 100%;
   font-family: var(--font-family);
+  background: var(--primary-color);
+  color: var(--text-color);
 }

@@ -1,33 +1,24 @@
+import React, { useEffect, useState } from "react";
 import "../../public/HeroSection.css";
-import SampleImg from '../../src/assets/music-producer-pic.jpg';
-import WavePack from '../../src/assets/trap-sounds.jpg';
-import DeckStudioPack from '../../src/assets/deck-studio.jpg';
-
-const samplePacks = [
-  {
-    id: 1,
-    title: "Lo-Fi Chill Beats Pack",
-    description: "Perfect for creating relaxed, mellow vibes.",
-    image: SampleImg,
-    link: "/packs/lofi-chill",
-  },
-  {
-    id: 2,
-    title: "Trap Essentials",
-    description: "Hard-hitting drums and 808s for modern trap production.",
-    image: WavePack,
-    link: "/packs/trap-essentials",
-  },
-  {
-    id: 3,
-    title: "Cinematic Atmospheres",
-    description: "Ambiences and textures for soundtracks and scoring.",
-    image: DeckStudioPack,
-    link: "/packs/cinematic-atmospheres",
-  },
-];
 
 export default function HeroSection() {
+  const [samplePacks, setSamplePacks] = useState([]); // State for storing fetched data
+  const [loading, setLoading] = useState(true); // State for tracking loading status
+
+  useEffect(() => {
+    // Fetch sample packs from the backend
+    fetch("http://localhost:5000/api/sample-packs")
+      .then((response) => response.json())
+      .then((data) => {
+        setSamplePacks(data); // Store fetched data in state
+        setLoading(false); // Mark loading as complete
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false); // Stop loading even if there's an error
+      });
+  }, []);
+
   return (
     <section className="hero-section">
       {/* Hero Content */}
@@ -43,18 +34,22 @@ export default function HeroSection() {
 
       {/* Showcase of Sample Packs */}
       <div className="sample-packs">
-        {samplePacks.map((pack) => (
-          <div className="sample-card" key={pack.id}>
-            <img src={pack.image} alt={pack.title} className="sample-image" />
-            <div className="sample-info">
-              <h3 className="sample-title">{pack.title}</h3>
-              <p className="sample-description">{pack.description}</p>
-              <a href={pack.link} className="sample-link">
-                Learn More
-              </a>
+        {loading ? ( // Conditional rendering based on loading state
+          <p className="loading-message">Loading sample packs...</p>
+        ) : (
+          samplePacks.map((pack) => (
+            <div className="sample-card" key={pack.id}>
+              <img src={pack.image} alt={pack.title} className="sample-image" />
+              <div className="sample-info">
+                <h3 className="sample-title">{pack.title}</h3>
+                <p className="sample-description">{pack.description}</p>
+                <a href={pack.link} className="sample-link">
+                  Learn More
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </section>
   );
