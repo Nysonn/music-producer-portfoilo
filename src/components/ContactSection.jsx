@@ -11,8 +11,10 @@ export default function ContactSection() {
         <button className="contact-button">Send</button>
       </form>
       <div className="contact-info">
-        <p>Email: example@producer.com</p>
-        <p>Phone: +123 456 7890</p>
+        <p>For inquiries, please email us at:</p>
+        <p><strong>info@billytunes.com</strong></p>
+        <p>Follow me on social media:</p>
+        <p><strong>@billytunes</strong></p>
       </div>
     </section>
   );

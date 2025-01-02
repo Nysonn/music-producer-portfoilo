@@ -1,66 +1,63 @@
-/* AboutSection.css */
-
 .about-section {
-    min-height: 100vh;
-    background: var(--gradient-primary);
-    color: var(--text-color);
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-  
-  .about-title {
-    font-family: var(--font-family);
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
-  }
-  
-  .about-text {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    margin: 0 auto 3rem;
-    color: var(--text-muted);
-    max-width: 800px;
-  }
-  
-  .about-image-container {
-    margin: 3rem auto;
-    max-width: 800px;
-    position: relative;
-  }
-  
-  .about-image {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(110, 68, 255, 0.1);
-  }
-  
-  .about-image:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-strong);
-    border-color: var(--secondary-color);
-  }
-  
-  /* Add a subtle gradient overlay on hover */
-  .about-image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-accent);
-    opacity: 0;
-    transition: var(--transition-smooth);
-    border-radius: 20px;
-    pointer-events: none;
-  }
-  
-  .about-image-container:hover::after {
-    opacity: 0.1;
-  }
-  
+  min-height: 100vh;
+  background: var(--gradient-primary);
+  color: var(--text-color);
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.about-image-container {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(110, 68, 255, 0.1);
+}
+
+.about-image:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--secondary-color);
+}
+
+.about-bio-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-title {
+  font-family: var(--font-family);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  text-shadow: 0 0 20px rgba(110, 68, 255, 0.3);
+}
+
+.about-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 600px;
+}
